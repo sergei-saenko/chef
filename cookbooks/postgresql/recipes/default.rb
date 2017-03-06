@@ -5,6 +5,7 @@
 # Copyright:: 2017, The Authors, All Rights Reserved.
 
 package 'postgresql' do
+	package_name 'postgresql', 'postgresql-server'
 	notifies :run, 'execute[postgresql-init]'
 end
 

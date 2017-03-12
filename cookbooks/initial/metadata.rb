@@ -1,6 +1,6 @@
 name 'initial'
-maintainer 'The Authors'
-maintainer_email 'you@example.com'
+maintainer 'Sergei Saenko'
+maintainer_email 'sergei.saenko@hotmail.com'
 license 'all_rights'
 description 'Installs/Configures initial'
 long_description 'Installs/Configures initial'

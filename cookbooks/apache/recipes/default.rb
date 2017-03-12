@@ -15,3 +15,14 @@ package 'apache' do
   end
 end
 
+service 'apache-daemon' do
+  ase node[:platform]
+  when 'redhat', 'centos'
+    service_name 'httpd'
+    action [:enable, :start]
+	when 'ubuntu', 'debian'
+    service_name 'apache2'
+    action [:enable, :start]
+	end
+end
+

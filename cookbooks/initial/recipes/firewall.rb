@@ -21,7 +21,7 @@ service 'Firewalld' do
 end
 
 
-execute 'ssh-port' do
-	command '/usr/bin/firewall-cmd --permanent --add-service=ssh'
+execute 'opened-ports' do
+	command '/usr/bin/firewall-cmd --permanent --add-service={ssh,http,https}'
 	command '/usr/bin/firewall-cmd --reload'
 end

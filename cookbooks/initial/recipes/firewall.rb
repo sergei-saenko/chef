@@ -22,6 +22,5 @@ end
 
 
 execute 'opened-ports' do
-	command '/usr/bin/firewall-cmd --permanent --add-service={ssh,http,https}'
-	command '/usr/bin/firewall-cmd --reload'
+	command '/usr/bin/firewall-cmd --permanent --add-service={ssh,http,https} && /usr/bin/firewall-cmd --reload'
 end

@@ -4,4 +4,4 @@
 #
 # Copyright:: 2017, The Authors, All Rights Reserved.
 
-include_recipe 'firewall'
+include_recipe 'initial::firewall'

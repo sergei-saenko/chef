@@ -17,7 +17,7 @@ end
 
 service 'Firewalld' do
 	service_name 'firewalld'
-	action [:enabled, :start]
+	action [:enable, :start]
 end
 
 

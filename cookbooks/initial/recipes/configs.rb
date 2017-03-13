@@ -6,9 +6,27 @@
 
 
 
-file '/etc/banner' do
-  content '<html>This is a placeholder for the home page.</html>'
-  mode '0755'
-  owner 'web_admin'
-  group 'web_admin'
+file '/etc/ssh/sshd_config' do
+  content '
+  HostKey /etc/ssh/ssh_host_rsa_key
+  HostKey /etc/ssh/ssh_host_ecdsa_key
+  HostKey /etc/ssh/ssh_host_ed25519_key
+  SyslogFacility AUTHPRIV
+  AuthorizedKeysFile      .ssh/authorized_keys
+  PasswordAuthentication yes
+  ChallengeResponseAuthentication no
+  GSSAPIAuthentication yes
+  GSSAPICleanupCredentials no
+  UsePAM yes
+  X11Forwarding yes
+  AcceptEnv LANG LC_CTYPE LC_NUMERIC LC_TIME LC_COLLATE LC_MONETARY LC_MESSAGES
+  AcceptEnv LC_PAPER LC_NAME LC_ADDRESS LC_TELEPHONE LC_MEASUREMENT
+  AcceptEnv LC_IDENTIFICATION LC_ALL LANGUAGE
+  AcceptEnv XMODIFIERS
+  Subsystem       sftp    /usr/libexec/openssh/sftp-server
+  Banner  /etc/banner
+  '
+  mode '0600'
+  owner 'root'
+  group 'root'
 end

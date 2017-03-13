@@ -25,3 +25,7 @@ service 'ssh-server' do
   end
   action [:enable, :start]
 end
+
+execute 'ssh-banner' do
+	command '/usr/bin/figlet `hostname` > /etc/banner'
+end

@@ -20,6 +20,6 @@ service 'sshd-reload' do
     action :reload
   when 'ubuntu', 'debian'
     service_name 'ssh'
-    action :reload
+    action :restart
   end
 end

@@ -10,6 +10,6 @@ template '/etc/ssh/sshd_config' do
   owner 'root'
   group 'root'
   mode '0600'
-  notifies :reload, 'service[sshd]', :immediate
+  notifies :reload, 'service[ssh-server]', :immediate
 end
 

@@ -17,8 +17,9 @@ service 'sshd-reload' do
 	case node[:platform]
   when 'redhat', 'centos'
     service_name 'sshd'
+    action :reload
   when 'ubuntu', 'debian'
     service_name 'ssh'
+    action :reload
   end
-  action :reload
 end

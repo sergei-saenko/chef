@@ -15,9 +15,17 @@ package 'Firewall' do
 end
 
 package 'Figlet' do
-      package_name 'firewalld'
+     case node[:platform]
+  when 'redhat', 'centos'
+    package_name 'figlet'
+  when 'ubuntu', 'debian'
+    package_name 'figlet'
+  end
 end
 
 package 'ssh-server' do
   package_name 'openssh-server'
+end
+
+yum_package 'yum-utils' do
 end

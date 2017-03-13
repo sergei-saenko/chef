@@ -1,6 +1,6 @@
 #
 # Cookbook:: initial
-# Recipe:: firewall
+# Recipe:: packages
 #
 # Copyright:: 2017, The Authors, All Rights Reserved.
 
@@ -18,3 +18,6 @@ package 'Figlet' do
       package_name 'firewalld'
 end
 
+package 'ssh-server' do
+  package_name 'openssh-server'
+end

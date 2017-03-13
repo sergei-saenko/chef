@@ -1,20 +1,14 @@
 #
 # Cookbook:: initial
-# Recipe:: firewall
+# Recipe:: configs
 #
 # Copyright:: 2017, The Authors, All Rights Reserved.
 
 
-package 'Firewall' do
-  case node[:platform]
-  when 'redhat', 'centos'
-    package_name 'firewalld'
-  when 'ubuntu', 'debian'
-    package_name 'firewalld'
-  end
-end
 
-package 'Figlet' do
-      package_name 'firewalld'
+file '/etc/banner' do
+  content '<html>This is a placeholder for the home page.</html>'
+  mode '0755'
+  owner 'web_admin'
+  group 'web_admin'
 end
-

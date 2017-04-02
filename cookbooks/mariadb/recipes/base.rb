@@ -1,6 +1,6 @@
 #
 # Cookbook:: mariadb
-# Recipe:: default
+# Recipe:: :base
 #
 # Copyright:: 2017, The Authors, All Rights Reserved.
 package 'mariadb' do
@@ -23,5 +23,3 @@ service 'mariadb-service' do
 	end
 end
 
-
-include_recipe 'mariadb::base'

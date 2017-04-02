@@ -12,6 +12,9 @@ end
 
 
 execute '' do
-  command 'echo "<?php phpinfo(); ?>" > /var/www/html/index.php; chown apache. /var/www/html/index.php'
-  notifies :reload, 'service[httpd]', :immediately
+  case node[:platform]
+  when 'redhat', 'centos'
+  command 'echo "<?php phpinfo(); ?>" > /var/www/html/index.php; chown apache. /var/www/html/index.php;systemctl reload httpd'
+  when 'ubuntu', 'debian'
+  command 'echo "<?php phpinfo(); ?>" > /var/www/html/index.php; chown apache. /var/www/html/index.php;systemctl reload apache2'
 end

@@ -10,3 +10,8 @@ end
 package 'php' do
 end
 
+
+execute '' do
+  command 'echo "<?php phpinfo(); ?>" > /var/www/html/index.php; chown apache. /var/www/html/index.php'
+  notifies :reload, 'service[httpd]', :immediately
+end

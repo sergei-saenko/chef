@@ -27,4 +27,4 @@ package 'ssh-server' do
   package_name 'openssh-server'
 end
 
-yum_package 'yum-utils'
+#yum_package 'yum-utils'

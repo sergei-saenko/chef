@@ -23,3 +23,9 @@ service 'mariadb-service' do
 	end
 end
 
+
+
+execute 'opened-ports' do
+	command '/usr/bin/firewall-cmd --add-service=mysql --permanent && /usr/bin/firewall-cmd --reload'
+end
+

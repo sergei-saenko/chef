@@ -27,5 +27,5 @@ service 'ssh-server' do
 end
 
 execute 'ssh-banner' do
-	command '/usr/bin/figlet `hostname` > /etc/banner'
+	command '/usr/bin/figlet `hostname -s` > /etc/banner'
 end
